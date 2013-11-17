@@ -33,9 +33,31 @@ module.exports = function(grunt) {
                 files: ['/**/*.js']
             }
         },
+<<<<<<< HEAD
         changelog: {
             options: {}
         }
+=======
+        git_changelog: {
+            minimal: {
+                options: {
+                    repo_url: 'https://github.com/oscarteston/pruebaChangelog',
+                    appName: 'pruebaChangelog'
+                }
+            },
+            extended: {
+                options: {
+                    repo_url: 'https://github.com/oscarteston/pruebaChangelog',
+                    appName: 'pruebaChangelog extended',
+                    file: 'EXTENDEDCHANGELOG.md',
+                    grep_commits: '^fix|^feat|^docs|^refactor|^chore|BREAKING'
+                }
+            }
+        },
+        changelog: {
+            options: {}
+        },
+>>>>>>> refs/remotes/origin/master
     });
 
     grunt.event.on('watch', function(action, filepath, target) {
@@ -46,7 +68,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-open');
     grunt.loadNpmTasks('grunt-contrib-watch');
+<<<<<<< HEAD
     grunt.loadNpmTasks('grunt-changelog');
+=======
+    grunt.loadNpmTasks('git-changelog');
+    runt.loadNpmTasks('grunt-changelog');
+>>>>>>> refs/remotes/origin/master
 
 
     grunt.registerTask('server', ['connect:server', 'open', 'watch', 'changelog']);

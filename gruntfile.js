@@ -32,6 +32,22 @@ module.exports = function(grunt) {
                 },
                 files: ['/**/*.js']
             }
+        },
+        git_changelog: {
+            minimal: {
+                options: {
+                    repo_url: 'https://github.com/oscarteston/pruebaChangelog',
+                    appName: 'pruebaChangelog'
+                }
+            },
+            extended: {
+                options: {
+                    repo_url: 'https://github.com/oscarteston/pruebaChangelog',
+                    appName: 'pruebaChangelog extended',
+                    file: 'EXTENDEDCHANGELOG.md',
+                    grep_commits: '^fix|^feat|^docs|^refactor|^chore|BREAKING'
+                }
+            }
         }
     });
 
@@ -43,8 +59,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-open');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    
+    grunt.loadNpmTasks('git-changelog');
 
-    grunt.registerTask('server', ['connect:server', 'open', 'watch']);
+
+    grunt.registerTask('server', ['connect:server', 'open', 'watch', 'git_changelog:extended']);
 
 };

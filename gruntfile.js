@@ -32,6 +32,9 @@ module.exports = function(grunt) {
                 },
                 files: ['/**/*.js']
             }
+        },
+        changelog: {
+            options: {}
         }
     });
 
@@ -43,8 +46,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-open');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    
+    grunt.loadNpmTasks('grunt-changelog');
 
-    grunt.registerTask('server', ['connect:server', 'open', 'watch']);
+
+    grunt.registerTask('server', ['connect:server', 'open', 'watch', 'changelog']);
 
 };

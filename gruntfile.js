@@ -33,11 +33,6 @@ module.exports = function(grunt) {
                 files: ['/**/*.js']
             }
         },
-<<<<<<< HEAD
-        changelog: {
-            options: {}
-        }
-=======
         git_changelog: {
             minimal: {
                 options: {
@@ -56,8 +51,7 @@ module.exports = function(grunt) {
         },
         changelog: {
             options: {}
-        },
->>>>>>> refs/remotes/origin/master
+        }
     });
 
     grunt.event.on('watch', function(action, filepath, target) {

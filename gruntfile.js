@@ -48,7 +48,10 @@ module.exports = function(grunt) {
                     grep_commits: '^fix|^feat|^docs|^refactor|^chore|BREAKING'
                 }
             }
-        }
+        },
+        changelog: {
+            options: {}
+        },
     });
 
     grunt.event.on('watch', function(action, filepath, target) {
@@ -60,8 +63,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-open');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('git-changelog');
+    runt.loadNpmTasks('grunt-changelog');
 
 
-    grunt.registerTask('server', ['connect:server', 'open', 'watch', 'git_changelog:extended']);
+    grunt.registerTask('server', ['connect:server', 'open', 'watch', 'changelog']);
 
 };

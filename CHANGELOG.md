@@ -32,6 +32,8 @@
   ([4c28f5d2](server/commits/4c28f5d2064b1ffcbee27c49611afa7f70d1b34f))
   - Mi primer commit
   ([3d44b712](server/commits/3d44b7121c7e7f64b55f77fb7f6ab0fd4da20d2b))
+- **gruntfile:** incluyo tarea grunt-conventional-changelog
+  ([5ab1c028](server/commits/5ab1c02882246b09091778b0fed311c7c3079e99))
 - **prueba:** Otro cambio mas
   ([fdf0f925](server/commits/fdf0f9253055431a27c9568c2905567b81b3a0de))
 

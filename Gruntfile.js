@@ -253,10 +253,26 @@ module.exports = function(grunt) {
                 }]
             }
         },
-        changelog: {
+        /*changelog: {
           options: {
             // Task-specific options go here.
             github: 'https://github.com/oscarteston/pruebaChangelog'
+          }
+        }*/
+        git_changelog: {
+          minimal: {
+            options: {
+              repo_url: 'https://github.com/oscarteston/pruebaChangelog',
+              appName : 'pruebaChangelog'
+            }
+          },
+          extended: {
+            options: {
+              repo_url: 'https://github.com/rafinskipg/git-changelog',
+              appName : 'Git changelog extended',
+              file : 'EXTENDEDCHANGELOG.md',
+              grep_commits: '^fix|^feat|^docs|^refactor|^chore|BREAKING'
+            }
           }
         }
     });
@@ -271,7 +287,7 @@ module.exports = function(grunt) {
             'connect:livereload',
             'open',
             'watch',
-            'changelog'
+            'git_changelog:minimal'
         ]);
     });
 

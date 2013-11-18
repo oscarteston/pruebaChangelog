@@ -6,7 +6,7 @@ var lrSnippet = require('connect-livereload')({
 });
 var mountFolder = function(connect, dir) {
     return connect.static(require('path').resolve(dir));
-};
+  };
 
 // # Globbing
 // for performance reasons we're only matching one level down:
@@ -253,30 +253,11 @@ module.exports = function(grunt) {
                 }]
             }
         },
-        uglify: {
-            dist: {
-                files: {
-                    '<%= yeoman.dist %>/scripts/scripts.js': [
-                        '<%= yeoman.dist %>/scripts/scripts.js'
-                    ]
-                }
-            }
-        },
-        git_changelog: {
-            minimal: {
-                options: {
-                    repo_url: 'https://github.com/oscarteston/pruebaChangelog',
-                    appName: 'Git changelog'
-                }
-            },
-            extended: {
-                options: {
-                    repo_url: 'https://github.com/rafinskipg/git-changelog',
-                    appName: 'Git changelog extended',
-                    file: 'EXTENDEDCHANGELOG.md',
-                    grep_commits: '^fix|^feat|^docs|^refactor|^chore|BREAKING'
-                }
-            }
+        changelog: {
+          options: {
+            // Task-specific options go here.
+            github: 'https://github.com/oscarteston/pruebaChangelog'
+          }
         }
     });
 
@@ -290,7 +271,7 @@ module.exports = function(grunt) {
             'connect:livereload',
             'open',
             'watch',
-            'git_changelog:minimal'
+            'changelog'
         ]);
     });
 
@@ -318,4 +299,6 @@ module.exports = function(grunt) {
         'test',
         'build'
     ]);
+
+    grunt.loadNpmTasks('git-changelog');
 };

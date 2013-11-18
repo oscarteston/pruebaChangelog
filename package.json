@@ -25,7 +25,8 @@
     "connect-livereload": "~0.2.0",
     "grunt-google-cdn": "~0.2.0",
     "grunt-ngmin": "~0.0.2",
-    "git-changelog": "~0.1.0"
+    "git-changelog": "~0.1.0",
+    "grunt-conventional-changelog": "~1.0.0"
   },
   "engines": {
     "node": ">=0.8.0"
